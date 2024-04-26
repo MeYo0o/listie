@@ -7,9 +7,11 @@
 // ignore_for_file: use_super_parameters
 // ignore_for_file: type_literal_in_constant_pattern
 
+import 'dart:async' as _i2;
+
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
-import 'dart:async' as _i2;
+
 import 'protocol.dart' as _i3;
 
 /// {@category Endpoint}
@@ -19,7 +21,8 @@ class EndpointExample extends _i1.EndpointRef {
   @override
   String get name => 'example';
 
-  _i2.Future<String> hello(String name) => caller.callServerEndpoint<String>(
+  _i2.Future<String> hello({required String name}) =>
+      caller.callServerEndpoint<String>(
         'example',
         'hello',
         {'name': name},

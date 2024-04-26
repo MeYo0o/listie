@@ -1,5 +1,5 @@
-import 'package:listie_client/listie_client.dart';
 import 'package:flutter/material.dart';
+import 'package:listie_client/listie_client.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 
 // Sets up a singleton client object that can be used to talk to the server from
@@ -51,7 +51,8 @@ class MyHomePageState extends State<MyHomePage> {
   // is successful.
   void _callHello() async {
     try {
-      final result = await client.example.hello(_textEditingController.text);
+      final result =
+          await client.example.hello(name: _textEditingController.text);
       setState(() {
         _errorMessage = null;
         _resultMessage = result;
